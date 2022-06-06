@@ -164,9 +164,9 @@ var init = () => {
     achievement3 = theory.createAchievement(2, "Wow", "1 c2.", () => c2.level > 0);
     achievement4 = theory.createAchievement(3, "Cool", "100000000 near this get", () => currency.value > 100000000);
     achievement5 = theory.createAchievement(4, "achear", "ahhhhhh 1e69 is funny.", () => currency.value > 1e69);
-    achievement6 = theory.createAchievement(5, "you win", "reaching this get from paraters get nowhere get this reach \u221EN?", () => currency_SUS.value > 308.2);
-    achievement7 = theory.createAchievement(6, "Somenthing Strange Notation?", "Reach 1e10000 N (somehow?) this funny", () => currency_SUS.value > 10000);
-    achievement8 = theory.createAchievement(7, "Text Kaineka Long", "Reach 1e666,666,666 N this game what", () => currency_SUS.value > 666666666);
+    achievement6 = theory.createAchievement(5, "you win", "reaching this get from paraters get nowhere get this reach \u221EN?", () => currency.value  > BigNumber.from("1.8e308"));
+    achievement7 = theory.createAchievement(6, "Somenthing Strange Notation?", "Reach 1e10000 N (somehow?) this funny", () => currency.value > BigNumber.from("1e10000"));
+    achievement8 = theory.createAchievement(7, "Text Kaineka Long", "Reach 1e666,666,666 N this game what", () => currency.value > BigNumber.from("1e666666666");
     achievement9 = theory.createAchievement(8, "Get to avabile this upgrade", "what", () => s4.level > 0);
 
     ///////////////////
