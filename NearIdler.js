@@ -4,10 +4,10 @@ import { BigNumber } from "./api/BigNumber";
 import { theory } from "./api/Theory";
 import { Utils } from "./api/Utils";
 
-var id = "near_theory";
+var id = "near_theory_old";
 var name = "Near Theory";
-var description = "A basic theory.";
-var authors = "Karen";
+var description = "This older version what what...";
+var authors = "The Creator";
 var version = 1;
 
 var currency;
@@ -118,7 +118,7 @@ var init = () => {
     // Permanent Upgrades
     theory.createPublicationUpgrade(0, currency, 1e9);
     theory.createBuyAllUpgrade(1, currency, 1e20);
-    theory.createAutoBuyerUpgrade(2, currency, 1e50);
+    theory.createAutoBuyerUpgrade(2, currency, 1e48);
 
     ///////////////////////
     //// Milestone Upgrades
@@ -185,7 +185,7 @@ var updateAvailability = () => {
 var tick = (elapsedTime, multiplier) => {
     let dt = BigNumber.from(elapsedTime * multiplier);
     let bonus = theory.publicationMultiplier;
-    currency_SUS = currency.value.log10()
+    currency_SUS = BigNumber.from(0);
     currency.value += dt * bonus * getC1(c1.level).pow(getC1Exponent(c1Exp.level)) *
                                    getC2(c2.level).pow(getC2Exponent(c2Exp.level)) *
                                    getC3(c3.level).pow(getC3Exponent(c3Exp.level)) *
@@ -228,10 +228,10 @@ var getPrimaryEquation = () => {
 }
 
 var getSecondaryEquation = () => theory.latexSymbol + "=\\max\\rho";
-var getPublicationMultiplier = (tau) => tau.pow(0.212) / BigNumber.THREE;
+var getPublicationMultiplier = (tau) => tau.pow(0.231) / BigNumber.THREE;
 var getPublicationMultiplierFormula = (symbol) => "\\frac{{" + symbol + "}^{0.164}}{3}";
 var getTau = () => currency.value;
-var get2DGraphValue = () => Math.PI;
+var get2DGraphValue = () => 2;
 
 var getC1 = (level) => Utils.getStepwisePowerSum(level, 3, 10, 0);
 var getC2 = (level) => BigNumber.TWO.pow(level);
